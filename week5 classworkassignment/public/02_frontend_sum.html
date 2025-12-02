@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sum</title>
+</head>
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <input id="a" type="text" placeholder="first value">
+    <input id="b" type="text" placeholder="second value">
+
+    <button onclick="sendRequest()">find sum</button>
+    <script>
+       async function sendRequest(){
+            // alert("hi");
+          // for connect the backend --> use fetch or axios
+          const response = await axios.post("http://localhost:3000/sum",{
+                a: document.getElementById("a").value,
+                b: document.getElementById("b").value
+            })
+                console.log(response.data);
+        }
+    </script>
+</body>
+</html>
